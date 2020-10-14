@@ -1,13 +1,7 @@
 # coin_dispense_flutter
 A Basic Coin Dispensing Flutter Application that Works on the Cubit State Management BlocLibrary Principle
 
-# flutter_counter
-
-A new Flutter project.
-
 ## Getting Started
-
-This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
