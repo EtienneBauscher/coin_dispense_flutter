@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class BreakDown extends StatefulWidget {
+class BreakDown extends StatelessWidget {
   final double amountToBreakDown;
   final twohundred;
   final onehundred;
@@ -28,11 +28,6 @@ class BreakDown extends StatefulWidget {
   );
 
   @override
-  _BreakDownState createState() => _BreakDownState();
-}
-
-class _BreakDownState extends State<BreakDown> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
@@ -48,41 +43,29 @@ class _BreakDownState extends State<BreakDown> {
                     children: [
                       const SizedBox(height: 30),
                       Text(
-                          'Amount to be returned\nR${widget.amountToBreakDown.toStringAsFixed(2)}'),
+                          'Amount to be returned\nR${amountToBreakDown.toStringAsFixed(2)}'),
                       const SizedBox(
                         height: 30,
                       ),
                       Text('Breakdown:'),
-                      widget.twohundred == 0
+                      twohundred == 0
                           ? SizedBox()
-                          : Text('${widget.twohundred} x R200.00'),
-                      widget.onehundred == 0
+                          : Text('$twohundred x R200.00'),
+                      onehundred == 0
                           ? SizedBox()
-                          : Text('${widget.onehundred} X R100.00'),
-                      widget.fifty == 0
+                          : Text('$onehundred X R100.00'),
+                      fifty == 0 ? SizedBox() : Text('$fifty x R50.00'),
+                      twenty == 0 ? SizedBox() : Text('$twenty x R20.00'),
+                      ten == 0 ? SizedBox() : Text('$ten x R10.00'),
+                      five == 0 ? SizedBox() : Text('$five x R5.00'),
+                      two == 0 ? SizedBox() : Text('$two x R2.00'),
+                      one == 0 ? SizedBox() : Text('$one x R200.00'),
+                      fiftyCents == 0
                           ? SizedBox()
-                          : Text('${widget.fifty} x R50.00'),
-                      widget.twenty == 0
+                          : Text('$fiftyCents x 50 cents'),
+                      twentyCents == 0
                           ? SizedBox()
-                          : Text('${widget.twenty} x R20.00'),
-                      widget.ten == 0
-                          ? SizedBox()
-                          : Text('${widget.ten} x R10.00'),
-                      widget.five == 0
-                          ? SizedBox()
-                          : Text('${widget.five} x R5.00'),
-                      widget.two == 0
-                          ? SizedBox()
-                          : Text('${widget.two} x R2.00'),
-                      widget.one == 0
-                          ? SizedBox()
-                          : Text('${widget.one} x R200.00'),
-                      widget.fiftyCents == 0
-                          ? SizedBox()
-                          : Text('${widget.fiftyCents} x 50 cents'),
-                      widget.twentyCents == 0
-                          ? SizedBox()
-                          : Text('${widget.twentyCents} x 20 cents'),
+                          : Text('$twentyCents x 20 cents'),
                       const SizedBox(height: 50),
                       RaisedButton(
                         child: const Text('Reset'),
